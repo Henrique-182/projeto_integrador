@@ -24,6 +24,8 @@ public class Operadora {
 				case "3":
 					System.out.println("3");
 					break;
+				case "-1":
+						condicao = false;
 				default:
 					System.out.println("Opção inválida");
 			}
