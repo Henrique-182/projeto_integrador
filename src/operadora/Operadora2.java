@@ -11,9 +11,10 @@ public class Operadora2 {
 		
 		while (condicao) {
 			System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-			System.out.println("1- Consumo de internet");
-			System.out.println("2- Planos ativos");
-			System.out.println("3- Outros planos");
+			System.out.println(" 1: Consumo de internet");
+			System.out.println(" 2: Planos ativos");
+			System.out.println(" 3: Outros planos");
+			System.out.println("-1: Sair");
 			System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 			
 			System.out.print("Opção: ");
