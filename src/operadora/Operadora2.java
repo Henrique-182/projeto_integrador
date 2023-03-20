@@ -78,21 +78,6 @@ public class Operadora2 {
 				case "-1":
 					condicao = false;
 			        System.out.println("Saindo...");
-			        // -----------------------------------------------------------------
-			        System.out.println("1 - voltar");
-			        System.out.println("2 - sair");
-			        opcao = scanner.next();
-			        switch (opcao) {
-			            case "1":
-			            	break;
-			            case "2":
-			                condicao = false;
-			                System.out.println("Saindo...");
-			                break;
-			            default:
-			                System.out.println("Opção inválida");
-			        }
-			        // -----------------------------------------------------------------
 			        break;
 				default:
 					System.out.println("Opção inválida");
