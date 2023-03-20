@@ -23,17 +23,77 @@ public class Operadora2 {
 			switch(opcao) {
 				case "1":
 					System.out.println("consumo...");
-					break;
+			        // ---------------------------------------------------------------
+			        System.out.println("1 - voltar");
+			        System.out.println("2 - sair");
+			        opcao = scanner.next();
+			        switch (opcao) {
+			            case "1":
+			              break;
+			            case "2":
+			              condicao = false;
+			              System.out.println("Saindo...");
+			              break;
+			            default:
+			              System.out.println("Opção inválida");
+			        }
+			        // -----------------------------------------------------------------
+			        break;
 				case "2":
 					System.out.println("ativos...");
-					break;
+			        // -----------------------------------------------------------------
+			        System.out.println("1 - voltar");
+			        System.out.println("2 - sair");
+			        opcao = scanner.next();
+			        switch (opcao) {
+			            case "1":
+			                break;
+			            case "2":
+			                condicao = false;
+			                System.out.println("Saindo...");
+			                break;
+			            default:
+			                System.out.println("Opção inválida");
+			        }
+			        // -----------------------------------------------------------------
+			        break;
 				case "3":
 					System.out.println("outros...");
-					break;
+			          // -----------------------------------------------------------------
+			        System.out.println("1 - voltar");
+			        System.out.println("2 - sair");
+			        opcao = scanner.next();
+			        switch (opcao) {
+			            case "1":
+			                break;
+			            case "2":
+			                condicao = false;
+			                System.out.println("Saindo...");
+			                break;
+			            default:
+			                System.out.println("Opção inválida");
+			        }
+			        // -----------------------------------------------------------------
+			        break;
 				case "-1":
 					condicao = false;
-					System.out.println("Saindo...");
-					break;
+			        System.out.println("Saindo...");
+			        // -----------------------------------------------------------------
+			        System.out.println("1 - voltar");
+			        System.out.println("2 - sair");
+			        opcao = scanner.next();
+			        switch (opcao) {
+			            case "1":
+			            	break;
+			            case "2":
+			                condicao = false;
+			                System.out.println("Saindo...");
+			                break;
+			            default:
+			                System.out.println("Opção inválida");
+			        }
+			        // -----------------------------------------------------------------
+			        break;
 				default:
 					System.out.println("Opção inválida");
 			}
