@@ -107,20 +107,26 @@ public class Operadora {
 			            case "3":
 			            	System.out.println("troca");
 							for (int i = 0; i < planos.size(); i++) {
-								if (planos.get(i) != planoAtivo) {
+								if (!planos.get(i).equalsIgnoreCase(planoAtivo)) {
 									System.out.println(i + "º -" + planos.get(i));
 								} 
 							} // mostra os planos disponíveis que não estão ativos pelo usuário
 							System.out.print("Escolha seu plano: ");
-							int planoTroca = entradaUsuario.nextInt();
-							if(planos.contains(planos.get(planoTroca))) {
-								FileWriter substituiPlanoAtivo = new FileWriter(caminhoArquivoPlanoAtivo, false);
-								substituiPlanoAtivo.write(planos.get(planoTroca));
-								substituiPlanoAtivo.close();
+							String planoEscolhido = entradaUsuario.next();
+							
+							if (planoEscolhido.equals("0") || planoEscolhido.equals("1") || planoEscolhido.equals("2") || planoEscolhido.equals("3") || planoEscolhido.equals("4")) {
+								int planoEscolhidoInt = Integer.parseInt(planoEscolhido);
+								if(planos.get(planoEscolhidoInt) != planoAtivo) {
+									FileWriter substituiPlanoAtivo = new FileWriter(caminhoArquivoPlanoAtivo, false);
+									substituiPlanoAtivo.write(planos.get(planoEscolhidoInt));
+									substituiPlanoAtivo.close();
+								} else {
+									System.out.println("O plano digitado já foi adquirido pelo cliente");
+								}
 							} else {
 								System.out.println("Esse plano não existe.");
 								System.out.println("Tente novamente");
-							}
+							} 
 			            	break;
 			            case "4":
 			                condicao = false;
@@ -143,7 +149,10 @@ public class Operadora {
 			            	System.out.print("Deseja realmente cancelar? [S/N] ");
 			            	String cancela = entradaUsuario.next();
 			            	if (cancela == "S" || cancela == "s") {
-								System.out.println("lógica de cancelamento a ser criada...");
+								System.out.println("cancelamento");
+								FileWriter substituiPlanoAtivo = new FileWriter(caminhoArquivoPlanoAtivo, false);
+								substituiPlanoAtivo.write("");
+								substituiPlanoAtivo.close();
 							} else {
 								System.out.println("Cancelamento não foi efetuado");
 							}
