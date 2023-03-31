@@ -4,9 +4,9 @@ ADS
 =======================================
 
 # Etapas
-  - [Integrantes](https://github.com/Henrique-182/projeto_integrador/edit/main/README.md#integrantes)
-  - [Instalação](https://github.com/Henrique-182/projeto_integrador/edit/main/README.md#instala%C3%A7%C3%A3o)
-  - [Execução](https://github.com/Henrique-182/projeto_integrador/edit/main/README.md#execu%C3%A7%C3%A3o)
+  - [Integrantes](https://github.com/Henrique-182/projeto_integrador#integrantes)
+  - [Instalação](https://github.com/Henrique-182/projeto_integrador#instala%C3%A7%C3%A3o)
+  - [Execução](https://github.com/Henrique-182/projeto_integrador#execu%C3%A7%C3%A3o)
 
 ## INTEGRANTES
   - Henrique Augusto Lobo
