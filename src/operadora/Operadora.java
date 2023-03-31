@@ -27,10 +27,10 @@ public class Operadora {
 		} // se o arquivo que contém o saldo do usuário não existir, será criado
 
 		double consumo = 0;
-		List<String> planos = Arrays.asList(" 1GB de internet - R$5.00", 
-											" 2GB de internet - R$10.00", 
-											" 3GB de internet - R$15.00", 
-											" 5GB de internet - R$20.00", 
+		List<String> planos = Arrays.asList("01GB de internet - R$05.00", 
+											"02GB de internet - R$10.00", 
+											"03GB de internet - R$15.00", 
+											"05GB de internet - R$20.00", 
 											"10GB de internet - R$30.00"
 											); // lista com os todos os planos disponíveis
 		
@@ -44,10 +44,10 @@ public class Operadora {
 			double saldo = leituraArquivoSaldo.nextDouble();
 
 			System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			System.out.println(" 0: Sair");
 			System.out.println(" 1: Consultas");
 			System.out.println(" 2: Compra/Troca");
 			System.out.println(" 3: Cancelamento");
-			System.out.println("-1: Sair");
 			System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 			
 			System.out.print("Opção: ");
@@ -57,12 +57,12 @@ public class Operadora {
 				
 				case "1":
 					System.out.println("=-=-=-=-= CONSULTAS =-=-=-=-=");
+					System.out.println("0 - sair");
 			        System.out.println("1 - voltar");
 			        System.out.println("2 - consumo de internet");
 			        System.out.println("3 - saldo");
 			        System.out.println("4 - plano ativo");
 			        System.out.println("5 - outros planos");
-			        System.out.println("6 - sair");
 			        opcao = entradaUsuario.next();
 			        switch (opcao) {
 			            case "1":
@@ -93,10 +93,10 @@ public class Operadora {
 			        break;
 				case "2":
 					System.out.println("=-=-=-=- COMPRA/TROCA =-=-=-=");
+			        System.out.println("0 - sair");
 			        System.out.println("1 - voltar");
 			        System.out.println("2 - comprar");
 			        System.out.println("3 - trocar");
-			        System.out.println("4 - sair");
 			        opcao = entradaUsuario.next();
 			        switch (opcao) {
 			            case "1":
@@ -138,9 +138,9 @@ public class Operadora {
 			        break;
 				case "3":
 					System.out.println("=-=-=-=- CANCELAMENTO =-=-=-=");
+					System.out.println("0 - sair");
 			        System.out.println("1 - voltar");
 			        System.out.println("2 - cancelar");
-			        System.out.println("3 - sair");
 			        opcao = entradaUsuario.next();
 			        switch (opcao) {
 			            case "1":
