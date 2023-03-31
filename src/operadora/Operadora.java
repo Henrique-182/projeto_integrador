@@ -3,6 +3,8 @@ package operadora;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +14,9 @@ public class Operadora {
 	public static void main(String[] args) throws Exception {
 		Scanner scanner = new Scanner(System.in); // Scanner que recebe as entradas do usuario
 
+		LocalDateTime localDateTime = LocalDateTime.now();
+		int dia = localDateTime.getDayOfMonth();
+        
 		String caminhoArquivoPlanoAtivo = "C:\\projeto_integrador\\src\\operadora\\planoAtivo.txt"; 
 		File arquivoPlanoAtivo = new File(caminhoArquivoPlanoAtivo);
 		
@@ -21,18 +26,17 @@ public class Operadora {
 		if (!arquivoPlanoAtivo.exists()) {
 			arquivoPlanoAtivo.createNewFile();
 			FileWriter fileWriter = new FileWriter(arquivoPlanoAtivo);
-			fileWriter.write("NENHUM PLANO ENCONTRADO");
+			fileWriter.write("NENHUM PLANO ENCONTRADO   ");
 			fileWriter.close();
 		} // se o arquivo que contém o plano ativo do usuário não existir, será criado
 
 		if (!arquivoSaldo.exists()) {
 			arquivoSaldo.createNewFile();
 			FileWriter fileWriter = new FileWriter(arquivoSaldo);
-			fileWriter.write("0");
+			fileWriter.write("0.0");
 			fileWriter.close();
 		} // se o arquivo que contém o saldo do usuário não existir, será criado
 
-		double consumo = 0;
 		List<String> planos = Arrays.asList("01GB de internet - R$05.00", 
 											"02GB de internet - R$10.00", 
 											"03GB de internet - R$15.00", 
@@ -42,24 +46,24 @@ public class Operadora {
 		
 		boolean condicao = true; // enquanto condição é true, o laço continua
 		
-		System.out.println("+---------------------------+");
-		System.out.println("│       SEJA BEM-VINDO      │");
-		System.out.println("│         BEM-VINDO         │");
+		System.out.println("+---------------------------------+");
+		System.out.println("│        CHATBOT OPERADORA        │");
+		System.out.println("│         SEJA BEM-VINDO          │");		
 		while (condicao) {
 			Scanner leituraArquivoPlanoAtivo = new Scanner(new FileInputStream(arquivoPlanoAtivo)); // abre o arquivo planoAtivo.txt
 			String planoAtivo = leituraArquivoPlanoAtivo.nextLine(); 
 
 			Scanner leituraArquivoSaldo = new Scanner(new FileInputStream(arquivoSaldo)); // abre o arquivo saldo.txt
-			double saldo = leituraArquivoSaldo.nextDouble();
+			double saldo = Double.parseDouble(leituraArquivoSaldo.next());
 
-			System.out.println("+---------------------------+");
-			System.out.println("│ 0: Sair                   │");
-			System.out.println("│ 1: Consultas              │");
-			System.out.println("│ 2: Compra/Troca           │");
-			System.out.println("│ 3: Cancelamento           │");
-			System.out.println("+---------------------------+");
+			System.out.println("+---------------------------------+");
+			System.out.println("│ 0: Sair                         │");
+			System.out.println("│ 1: Consultas                    │");
+			System.out.println("│ 2: Compra/Troca                 │");
+			System.out.println("│ 3: Cancelamento                 │");
+			System.out.println("+---------------------------------+");
 			
-			System.out.print("Opção: ");
+			System.out.print("Menu principal: ");
 			String opcao = scanner.next();
 			
 			switch(opcao) {
@@ -68,137 +72,226 @@ public class Operadora {
 			        System.out.println("Saindo...");
 			        break;
 				case "1":
-					System.out.println("+-------- CONSULTAS --------+");
-					System.out.println("│ 0 - sair                  │");
-			        System.out.println("│ 1 - voltar                │");
-			        System.out.println("│ 2 - consumo de internet   │");
-			        System.out.println("│ 3 - saldo                 │");
-			        System.out.println("│ 4 - plano ativo           │");
-			        System.out.println("│ 5 - outros planos         │");
-					System.out.println("+---------------------------+");
+					System.out.println("+----------- CONSULTAS -----------+");
+					System.out.println("│ 0 - sair                        │");
+			        System.out.println("│ 1 - voltar                      │");
+			        System.out.println("│ 2 - consumo de internet         │");
+			        System.out.println("│ 3 - saldo                       │");
+			        System.out.println("│ 4 - plano ativo                 │");
+			        System.out.println("│ 5 - outros planos               │");
+					System.out.println("+---------------------------------+");
+
+					System.out.print("Menu secundário: ");
 			        opcao = scanner.next();
 			        switch (opcao) {
 						case "0":
 			                condicao = false;
-			                System.out.println("Saindo...");
+							System.out.println("+---------------------------------+");
+			                System.out.println("|             SAINDO              |");
+							System.out.println("+---------------------------------+");
 			                break;
 			            case "1":
 			                break;
 			            case "2":
-			            	System.out.println("Consumo: " + consumo + "GB");
+							double consumo = 0.2 * dia;
+							System.out.println("+---------------------------------+");
+			            	System.out.println("| Consumo: " + consumo + " GB");
+							System.out.println("+---------------------------------+");
 			            	break;
 			            case "3":
-			            	System.out.println("Saldo: R$" + saldo);
+
+							System.out.println("+---------------------------------+");
+			            	System.out.println("| Saldo: R$" + saldo);
+							System.out.println("+---------------------------------+");
 			            	break;
 			            case "4":
-			            	System.out.println(planoAtivo);
+							System.out.println("+---------------------------------+");
+			            	System.out.println("| " + planoAtivo + "      |");
+							System.out.println("+---------------------------------+");
 			            	break;
 			            case "5":
+							System.out.println("+---------------------------------+");
 			            	for (String plano : planos) {
 								if (!plano.equals(planoAtivo)) {
-									System.out.println(plano);
+									System.out.println("| " + plano + "      |");
 								} // se o plano ativo não for o mesmo do armazenado na volta do laço, será mostrado na tela
 							}
+							System.out.println("+---------------------------------+");
 			            	break;			            
 			            default:
-			                System.out.println("Opção inválida");
+							System.out.println("+---------------------------------+");
+			                System.out.println("|          Opção inválida         |");
+							System.out.println("+---------------------------------+");
 			        }
 			        break;
 				case "2":
-					System.out.println("+------- COMPRA/TROCA ------+");
-			        System.out.println("│ 0 - sair                  │");
-			        System.out.println("│ 1 - voltar                │");
-			        System.out.println("│ 2 - comprar               │");
-			        System.out.println("│ 3 - trocar                │");
-					System.out.println("+---------------------------+");
+					System.out.println("+---------- COMPRA/TROCA ---------+");
+			        System.out.println("│ 0 - sair                        │");
+			        System.out.println("│ 1 - voltar                      │");
+			        System.out.println("│ 2 - comprar                     │");
+			        System.out.println("│ 3 - trocar                      │");
+					System.out.println("│ 4 - recarga                     │");
+					System.out.println("+---------------------------------+");
+
+					System.out.print("Menu secundário: ");
 			        opcao = scanner.next();
 			        switch (opcao) {
 						case "0":
 			                condicao = false;
-			                System.out.println("Saindo...");
+							System.out.println("+---------------------------------+");
+			                System.out.println("|             SAINDO              |");
+							System.out.println("+---------------------------------+");
 			                break;
 			            case "1":
 			                break;
 			            case "2":
-							if (!planoAtivo.equalsIgnoreCase("NENHUM PLANO ENCONTRADO")) {
-								System.out.println("Não é possível comprar");
-								System.out.println("Não há plano ativo");
+							if (!planoAtivo.equalsIgnoreCase("NENHUM PLANO ENCONTRADO   ")) {
+								System.out.println("+---------------------------------+");
+								System.out.println("|      Não é possível comprar     |");
+								System.out.println("|        Há um plano ativo        |");
+								System.out.println("+---------------------------------+");
 								break;
 							}
-							System.out.println("compra");
+							System.out.println("+------------- COMPRA -------------+");
+							for (int i = 0; i < planos.size(); i++) {								
+								if (!planos.get(i).equalsIgnoreCase(planoAtivo)) {
+									System.out.println("| " + i + "º - " + planos.get(i) + "  |");
+								} 								
+							} // mostra os planos disponíveis que não estão ativos pelo usuário
+							System.out.println("+----------------------------------+");
+							System.out.print("Escolha seu plano: ");
+							String planoCompra = scanner.next();
+							if (planoCompra.equals("0") || planoCompra.equals("1") || planoCompra.equals("2") || planoCompra.equals("3") || planoCompra.equals("4")) {
+								int planoCompraInt = Integer.parseInt(planoCompra);
+								if(!planos.get(planoCompraInt).equalsIgnoreCase(planoAtivo)) {
+									FileWriter substituiPlanoAtivo = new FileWriter(caminhoArquivoPlanoAtivo, false);
+									substituiPlanoAtivo.write(planos.get(planoCompraInt));
+									substituiPlanoAtivo.close();
+									System.out.println("+---------------------------------+");
+									System.out.println("|          Plano comprado         |");
+								} else {
+									System.out.println("+---------------------------------+");
+									System.out.println("| Plano digitado já foi adquirido |");
+								}
+							} 	else {
+									System.out.println("+---------------------------------+");
+									System.out.println("|      Esse plano não existe      |");
+									System.out.println("|         Tente novamente         |");
+							}
+							System.out.println("+---------------------------------+");
 			            	break;
 			            case "3":
-							if (planoAtivo.equalsIgnoreCase("NENHUM PLANO ENCONTRADO")) {
-								System.out.println("Não é possível trocar");
-								System.out.println("Cliente não possui um plano ativo");
+							if (planoAtivo.equalsIgnoreCase("NENHUM PLANO ENCONTRADO   ")) {
+								System.out.println("+---------------------------------+");
+								System.out.println("|      Não é possível trocar      |");
+								System.out.println("|      Não há um plano ativo      |");
+								System.out.println("+---------------------------------+");
 								break;
-							}
-							
+							}							
+							System.out.println("+------------- TROCA -------------+");
 							for (int i = 0; i < planos.size(); i++) {
 								if (!planos.get(i).equalsIgnoreCase(planoAtivo)) {
-									System.out.println(i + "º - " + planos.get(i));
+									System.out.println("| " + i + "º - " + planos.get(i) + " |");
 								} 
 							} // mostra os planos disponíveis que não estão ativos pelo usuário
+							System.out.println("+---------------------------------+");
 							System.out.print("Escolha seu plano: ");
-							String planoEscolhido = scanner.next();
+							String planoTroca = scanner.next();
 							
-							if (planoEscolhido.equals("0") || planoEscolhido.equals("1") || planoEscolhido.equals("2") || planoEscolhido.equals("3") || planoEscolhido.equals("4")) {
-								int planoEscolhidoInt = Integer.parseInt(planoEscolhido);
-								if(!planos.get(planoEscolhidoInt).equalsIgnoreCase(planoAtivo)) {
+							if (planoTroca.equals("0") || planoTroca.equals("1") || planoTroca.equals("2") || planoTroca.equals("3") || planoTroca.equals("4")) {
+								int planoTrocaInt = Integer.parseInt(planoTroca);
+								if(!planos.get(planoTrocaInt).equalsIgnoreCase(planoAtivo)) {
 									FileWriter substituiPlanoAtivo = new FileWriter(caminhoArquivoPlanoAtivo, false);
-									substituiPlanoAtivo.write(planos.get(planoEscolhidoInt));
+									substituiPlanoAtivo.write(planos.get(planoTrocaInt));
 									substituiPlanoAtivo.close();
-									System.out.println("Plano alterado");
+									System.out.println("+---------------------------------+");
+									System.out.println("|          Plano alterado         |");
 								} else {
-									System.out.println("O plano digitado já foi adquirido pelo cliente");
+									System.out.println("+---------------------------------+");
+									System.out.println("| Plano digitado já foi adquirido |");
 								}
 							} else {
-								System.out.println("Esse plano não existe.");
-								System.out.println("Tente novamente");
+								System.out.println("+---------------------------------+");
+								System.out.println("|      Esse plano não existe      |");
+								System.out.println("|         Tente novamente         |");
 							} 
+							System.out.println("+---------------------------------+");
 			            	break;			            
-			            default:
-			                System.out.println("Opção inválida");
+						case "4":
+							System.out.print("Valor recarga: R$");
+							String recarga = scanner.next();	
+							recarga = recarga.replace(",", ".");						
+							System.out.println("+---------------------------------+");							
+							try {
+								recarga.replace(",", ".");
+								double recargaDouble = Double.parseDouble(recarga);
+								saldo += recargaDouble;
+								String saldoString = "" + saldo;
+								FileWriter fileWriter = new FileWriter(caminhoArquivoSaldo);
+								fileWriter.write(saldoString);
+								fileWriter.close();
+								System.out.println("|         Recarga Efetuada        |");
+							} catch (Exception e) {
+								System.out.println("|         Número inválido         |");
+							}
+							System.out.println("+---------------------------------+");
+							break;	
+						default:
+							System.out.println("+---------------------------------+");
+							System.out.println("|          Opção inválida         |");
+							System.out.println("+---------------------------------+");
 			        }
 			        break;
 				case "3":
-					System.out.println("+------- CANCELAMENTO ------+");
-					System.out.println("│ 0 - sair                  │");
-			        System.out.println("│ 1 - voltar                │");
-			        System.out.println("│ 2 - cancelar              │");
-					System.out.println("+---------------------------+");
+					System.out.println("+---------- CANCELAMENTO ---------+");
+					System.out.println("│ 0 - sair                        │");
+			        System.out.println("│ 1 - voltar                      │");
+			        System.out.println("│ 2 - cancelar                    │");
+					System.out.println("+---------------------------------+");
 
+					System.out.print("Menu secundário: ");
 			        opcao = scanner.next();
 			        switch (opcao) {
 						case "0":
 			                condicao = false;
-			                System.out.println("Saindo...");
+							System.out.println("+---------------------------------+");
+			                System.out.println("|             SAINDO              |");
+							System.out.println("+---------------------------------+");
 			                break;
 			            case "1":
 			                break;
 			            case "2":
-							if (planoAtivo.equalsIgnoreCase("NENHUM PLANO ENCONTRADO")) {
-								System.out.println("Não é possível cancelar");
-								System.out.println("Não há plano ativo");
+							if (planoAtivo.equalsIgnoreCase("NENHUM PLANO ENCONTRADO   ")) {
+								System.out.println("+---------------------------------+");
+								System.out.println("|     Não é possível cancelar     |");
+								System.out.println("|        Não há plano ativo       |");
+								System.out.println("+---------------------------------+");
 								break;
 							}
 			            	System.out.print("Deseja realmente cancelar? [S/N] ");
 			            	String cancela = scanner.next();
-			            	if (cancela.equalsIgnoreCase("S")) {
-								System.out.println("cancelamento");
-								FileWriter substituiPlanoAtivo = new FileWriter(caminhoArquivoPlanoAtivo, false);
-								substituiPlanoAtivo.write("NENHUM PLANO ENCONTRADO");
-								substituiPlanoAtivo.close();
+			            	if (cancela.equalsIgnoreCase("S")) {								
+								FileWriter cancelaPlanoAtivo = new FileWriter(caminhoArquivoPlanoAtivo, false);
+								cancelaPlanoAtivo.write("NENHUM PLANO ENCONTRADO   ");
+								cancelaPlanoAtivo.close();
+								System.out.println("+---------------------------------+");
+								System.out.println("|      Cancelamento efetuado      |");
 							} else {
-								System.out.println("Cancelamento não foi efetuado");
+								System.out.println("+---------------------------------+");
+								System.out.println("|  Cancelamento não foi efetuado  |");
 							}
+							System.out.println("+---------------------------------+");
 			            	break;			            
 			            default:
-			                System.out.println("Opção inválida");
+							System.out.println("+---------------------------------+");
+							System.out.println("|          Opção inválida         |");
+							System.out.println("+---------------------------------+");
 			        }
 			        break;				
 				default:
-					System.out.println("Opção inválida");
+					System.out.println("+---------------------------------+");
+					System.out.println("|          Opção inválida         |");
+					System.out.println("+---------------------------------+");
 			}
 			leituraArquivoPlanoAtivo.close();
 			leituraArquivoSaldo.close();
