@@ -22,7 +22,6 @@ ADS
       * Code -> Local -> HTTPS -> Download ZIP
       
   3. Extrair a pasta dentro do diretório `C:`
-  ![Extrair a Pasta](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/instalacao2.png)
   
   4. Renomear a pasta que foi extraída para `projeto_integrador`, excluindo o `-main`
   ![Renomear a Pasta](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/instalacao3.png)
