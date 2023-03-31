@@ -22,6 +22,8 @@ ADS
       * Code -> Local -> HTTPS -> Download ZIP
       
   3. Extrair a pasta dentro do diretório `C:`
+      * Caso seu Windows aparece essa aba, apague e renomeie da seguinte forma
+      ![Renomear a Pasta](https://)      
   
   4. Renomear a pasta que foi extraída para `projeto_integrador`, excluindo o `-main`
   ![Renomear a Pasta](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/instalacao3.png)
