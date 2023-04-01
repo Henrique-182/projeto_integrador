@@ -26,7 +26,7 @@ ADS
       ![Renomear a Pasta](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/instalacao1.png)      
   
   4. Renomear a pasta que foi extraída para `projeto_integrador`, excluindo o `-main`
-   ![Renomear a Pasta](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/instalacao3.png)
+   ![Renomear a Pasta](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/instalacao2.png)
 
 ## EXECUÇÃO
   1. CMD
