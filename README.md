@@ -37,10 +37,14 @@ ADS
       3. Com o CMD aberto, digite `DIR` para certificar-se de que o arquivo `Operadora.java` existe
       4. Digite `java Operadora.java` para executar o programa
       ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoCMD3.png)
+      
   2. [Visual Studio Code](https://code.visualstudio.com/)
-      1. Abrir a pasta que possui os arquivos `.java`, localizada no diretório `C:\projeto_integrador\src\operadora`
+      1. Abrir a pasta que possui o arquivo `.java`, localizada no diretório `C:\projeto_integrador\src\operadora`
       2. Clicar com o botão direito do mouse e localizar `abrir com code`
+      ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoVSCODE1.png)
       3. `Ctrl + F5` ou `Run Without Debugging` para executar o programa
+      ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoVSCODE2.png)
+      
   3. [Eclipse](https://www.eclipse.org/)
       1. Ep
   
