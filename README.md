@@ -5,17 +5,17 @@ ADS
 
 # Etapas
   - [Integrantes](https://github.com/Henrique-182/projeto_integrador#integrantes)
-  - [Instalação](https://github.com/Henrique-182/projeto_integrador#instala%C3%A7%C3%A3o)
+  - [Primeiros Passos](https://github.com/Henrique-182/projeto_integrador/edit/main/README.md#primeiros-passos)
   - [Execução](https://github.com/Henrique-182/projeto_integrador#execu%C3%A7%C3%A3o)
 
 ## INTEGRANTES
+  - Elquechim de Sousa
   - Henrique Augusto Lobo
-  - Victor
-  - Vitor
-  - Elquechim
-  - Rayane
+  - Raiany de Souza Batista
+  - Victor César Vieira
+  - Vitor Lopes da Silva
 
-## INSTALAÇÃO
+## Primeiros Passos
   1. Entrar no [link do repositório](https://github.com/Henrique-182/projeto_integrador)
   
   2. Baixar o arquivo ZIP do projeto
@@ -30,14 +30,17 @@ ADS
 
 ## EXECUÇÃO
   1. CMD
-      1. Abrir a pasta que possui os arquivos `.java`, localizada no diretório `C:\projeto_integrador\src\operadora`
+      1. Abrir a pasta que possui o arquivo `.java`, localizada no diretório `C:\projeto_integrador\src\operadora`
+      ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoCMD1.png)
       2. Clicar no caminho da pasta e digitar `cmd`
+      ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoCMD2.png)
       3. Com o CMD aberto, digite `DIR` para certificar-se de que o arquivo `Operadora.java` existe
       4. Digite `java Operadora.java` para executar o programa
+      ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoCMD3.png)
   2. [Visual Studio Code](https://code.visualstudio.com/)
       1. Abrir a pasta que possui os arquivos `.java`, localizada no diretório `C:\projeto_integrador\src\operadora`
       2. Clicar com o botão direito do mouse e localizar `abrir com code`
-      3. `Ctrl + F5` para executar o programa
+      3. `Ctrl + F5` ou `Run Without Debugging` para executar o programa
   3. [Eclipse](https://www.eclipse.org/)
       1. Ep
   
