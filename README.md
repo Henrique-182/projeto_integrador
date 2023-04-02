@@ -5,7 +5,7 @@ ADS
 
 # Etapas
   - [Integrantes](https://github.com/Henrique-182/projeto_integrador#integrantes)
-  - [Primeiros Passos](https://github.com/Henrique-182/projeto_integrador/edit/main/README.md#primeiros-passos)
+  - [Primeiros Passos](https://github.com/Henrique-182/projeto_integrador#primeiros-passos)
   - [Execução](https://github.com/Henrique-182/projeto_integrador#execu%C3%A7%C3%A3o)
 
 ## INTEGRANTES
