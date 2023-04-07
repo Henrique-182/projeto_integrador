@@ -29,14 +29,13 @@ ADS
    ![Renomear a Pasta](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/instalacao2.png)
 
 ## EXECUÇÃO
-  1. CMD
+  1. PowerShell
       1. Abrir a pasta que possui o arquivo `.java`, localizada no diretório `C:\projeto_integrador\src\operadora`
-      ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoCMD1.png)
-      2. Clicar no caminho da pasta e digitar `cmd`
-      ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoCMD2.png)
-      3. Com o CMD aberto, digite `DIR` para certificar-se de que o arquivo `Operadora.java` existe
+      2. Clicar no caminho da pasta e digitar `powershell`
+      ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaopowershell1.png)
+      3. Com o PowerShell aberto, digite `DIR` para certificar-se de que o arquivo `Operadora.java` existe
       4. Digite `java Operadora.java` para executar o programa
-      ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoCMD3.png)
+      ![Executar programa](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaopowershell2.png)
       
   2. [Visual Studio Code](https://code.visualstudio.com/)
       1. Abrir a pasta que possui o arquivo `.java`, localizada no diretório `C:\projeto_integrador\src\operadora`
@@ -45,6 +44,7 @@ ADS
       3. `Ctrl + F5` ou `Run Without Debugging` para executar o programa
       ![Digitar CMD](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoVSCODE2.png)
       
-  3. [Eclipse](https://www.eclipse.org/)
-      1. Ep
+  3. [Replit](https://replit.com/)
+      1. Link para executar o [código online](https://replit.com/@Henrique-182/Operadora?v=1) (não é necessário conta para executar)
+      ![Execução Replit](https://raw.githubusercontent.com/Henrique-182/projeto_integrador/main/images/execucaoReplit1.png)
   
