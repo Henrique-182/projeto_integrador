@@ -14,11 +14,8 @@ public class Operadora {
 	public static void main(String[] args) throws Exception {
 		Scanner scanner = new Scanner(System.in); 
         
-		String caminhoArquivoPlanoAtivo = "C:\\projeto_integrador\\src\\operadora\\planoAtivo.txt"; 
-		File arquivoPlanoAtivo = new File(caminhoArquivoPlanoAtivo);
-		
-		String caminhoArquivoSaldo = "C:\\projeto_integrador\\src\\operadora\\saldo.txt";
-		File arquivoSaldo = new File(caminhoArquivoSaldo);
+		File arquivoPlanoAtivo = new File("C:\\projeto_integrador\\src\\operadora\\planoAtivo.txt");
+		File arquivoSaldo = new File("C:\\projeto_integrador\\src\\operadora\\saldo.txt");
 
 		if (!arquivoPlanoAtivo.exists()) {
 			arquivoPlanoAtivo.createNewFile();
@@ -317,8 +314,8 @@ public class Operadora {
 		return false;
 	}
 
-	public static void escreveEmArquivo(File caminhoArquivo, String texto) throws Exception {
-		FileWriter fileWriter = new FileWriter(caminhoArquivo, false);
+	public static void escreveEmArquivo(File arquivo, String texto) throws Exception {
+		FileWriter fileWriter = new FileWriter(arquivo, false);
 		fileWriter.write(texto);
 		fileWriter.close();
 	}		
